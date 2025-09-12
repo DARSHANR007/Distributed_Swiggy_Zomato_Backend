@@ -1,8 +1,7 @@
 package rider
 
 import (
-	"food_delivery/customer"
-	"food_delivery/restaurant"
+	"food_delivery/internal"
 )
 
 type Rider struct {
@@ -16,8 +15,8 @@ type Rider struct {
 }
 
 type Order struct {
-	CustomerInfo   *customer.Customer
-	RestaurantInfo *restaurant.Restaurant
+	CustomerInfo   *internal.Customer
+	RestaurantInfo *internal.Restaurant
 	OrderAddress   string
 	Price          float64
 }
