@@ -1,6 +1,8 @@
 package internal
 
-import "food_delivery/cmd/restaurant"
+import (
+	"food_delivery/cmd/restaurant"
+)
 
 type Customer struct {
 	Name     string
