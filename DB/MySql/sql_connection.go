@@ -44,6 +44,6 @@ func ConnectToDatabase() *sql.DB {
 		log.Fatal("Error connecting to database:", err)
 	}
 
-	fmt.Println("Successfully connected to MySQL database!")
+	fmt.Println("✅ Successfully connected to MySQL database!")
 	return db
 }

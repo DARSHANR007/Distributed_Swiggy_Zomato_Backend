@@ -28,6 +28,7 @@ func (c *customerConnections) getCustomerByID(id int) (*internal.Customer, error
 	customer.ID = id
 	return &customer, nil
 }
+
 func (c *customerConnections) getAllCustomers() ([]internal.Customer, error) {
 	query := "SELECT id, name, address, phone, email, password FROM customers"
 	rows, err := c.DB.Query(query)
@@ -35,6 +36,7 @@ func (c *customerConnections) getAllCustomers() ([]internal.Customer, error) {
 		return nil, err
 	}
 	defer rows.Close()
+
 	var customers []internal.Customer
 	for rows.Next() {
 		var customer internal.Customer
@@ -51,7 +53,6 @@ func (c *customerConnections) updateCustomer(customer internal.Customer) error {
 	query := "UPDATE customers SET name = ?, address = ?, phone = ?, email = ?, password = ? WHERE id = ?"
 	_, err := c.DB.Exec(query, customer.Name, customer.Address, customer.Phone, customer.Email, customer.Password, customer.ID)
 	return err
-
 }
 
 func (c *customerConnections) deleteCustomer(id int) error {
