@@ -9,7 +9,6 @@ type Customer struct {
 	Address  string
 	Phone    string
 	Email    string
-	ID       int
 	Password string
 	Orders   map[string][]OrderHistory
 }

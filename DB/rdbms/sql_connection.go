@@ -1,4 +1,4 @@
-package MySql
+package rdbms
 
 import (
 	"database/sql"
@@ -29,16 +29,13 @@ func ConnectToDatabase() *sql.DB {
 		log.Fatal("Database environment variables not set properly")
 	}
 
-	// Format: username:password@tcp(host:port)/dbname
 	dsn := fmt.Sprintf("%s:%s@tcp(%s:%s)/%s", user, password, host, port, name)
 
-	// Open connection
 	db, err := sql.Open("mysql", dsn)
 	if err != nil {
 		log.Fatal("Error opening database:", err)
 	}
 
-	// Test connection
 	err = db.Ping()
 	if err != nil {
 		log.Fatal("Error connecting to database:", err)

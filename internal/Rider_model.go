@@ -19,3 +19,5 @@ type RideHistory struct {
 	TotalAmount  float64
 	OrderAddress string
 }
+
+

@@ -24,8 +24,8 @@ func OrderDish(c *internal.Customer, r *restaurant.Restaurant, dishNames []strin
 
 	orderID := len(c.Orders[r.Name]) + 1
 	newOrder := internal.OrderHistory{
-		ID:           orderID,
-		CustomerID:   c.ID,
+		ID: orderID,
+		// CustomerID:   c.ID,
 		RestaurantID: r.ID,
 		Dishes:       orderedDishes,
 		TotalAmount:  total,
