@@ -2,11 +2,11 @@ package internal
 
 type Restaurant struct {
 	Name     string
-	ID       int32
 	Address  []string
 	Phone    string
 	Email    string
 	Password string
+	City     string
 	Menu     map[string]*Dish
 }
 
